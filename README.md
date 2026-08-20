@@ -15,7 +15,7 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 # 💫 About Me:
-I’m a junior Systems & Network Administrator transitioning into the cybersecurity field, with hands-on experience in Linux administration, network services, and infrastructure maintenance. I recently completed a professional internship where I audited and maintained multi-site workstation environments, performed diagnostics, organized hardware inventories, and supported server-side tasks.<br><br>My final project focused on optimizing network performance using Squid Proxy on Debian, giving me practical exposure to proxy caching, traffic optimization, and secure service deployment.<br><br>Currently, I’m advancing my skills through the Jobintech Cyber Defense program at DataProtect, where I’m developing a stronger foundation in threat detection, network defense, and security tooling.<br><br>I’m passionate about building secure systems, experimenting with cybersecurity tools, and creating projects that strengthen my technical abilities while contributing to the community.
+I’m a junior Systems & Network Administrator transitioning into the cybersecurity field, with hands-on experience in Linux administration, network services, and infrastructure maintenance. I recently completed a professional internship where I audited and maintained multi-site workstation environments, performed diagnostics, organized hardware inventories, and supported server-side tasks.<br><br>
 
 
 ## 🌐 Socials:
