@@ -37,7 +37,7 @@ document everything, break it on purpose, fix it, repeat
 - 🛡️ **Privileged Access Management and Zero Trust**: brokering every admin session through a bastion
 - 🔐 **Identity and encrypted auth**: Active Directory, LDAPS, PKI
 - 🧱 **Network segmentation**: VLANs, isolated zones, firewalls
-- 🕵️ **Detection and response labs**: attack simulation (Red vs Blue) and SIEM monitoring
+- 🕵️ **Detection labs**: simulating attacks (recon, scanning, brute force) and catching them in a SIEM
 - 🐧 **Linux and virtualization**: Debian, Proxmox VE, VMware
 
 ---
@@ -74,13 +74,40 @@ flowchart TB
 
 ---
 
-## 🧪 Labs
+## 🧪 More projects
 
-| Lab | What it covers |
-|---|---|
-| 🏢 **Hybrid Enterprise** | Proxmox + Cisco VLAN architecture. An isolated "virtual cage" bridge to air-gap the lab and stop DHCP leaks. Windows Server (AD/DHCP) and pfSense |
-| ⚔️ **SIEM Attack Detection (Red vs Blue)** | Attacks from Kali (Nmap, brute force) detected and analysed in a SIEM, plus CLI troubleshooting (`fdisk`, `growpart`, swap) |
-| 🏰 **Zero Trust PAM** | See the featured project above |
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### 🌐 [Hybrid Cyber Defense Lab](https://github.com/0xEmhddsi-Net/Hybrid-Cyber-Defense-Lab)
+
+A **hybrid segmented network** mixing physical Cisco hardware with a virtualized Proxmox lab, built to keep Red Team traffic strictly away from the physical LAN.
+
+- 🔌 Physical **VLAN segmentation** on a Cisco router (dedicated lab VLAN, off the management VLAN)
+- 🔒 A **"Virtual Cage"**: a Linux bridge with no physical ports, forcing all traffic through **pfSense**
+- 🏢 Windows Server **Active Directory / DHCP** on the isolated bridge
+- 🐛 Root-caused and fixed a **rogue DHCP leak** onto the physical network
+
+`Proxmox VE` `Cisco` `VLAN` `pfSense` `Active Directory`
+
+</td>
+<td width="50%" valign="top">
+
+### 🔍 [Splunk Attack Detection Lab](https://github.com/0xEmhddsi-Net/splunk-attack-detection-lab)
+
+A **Red vs Blue** setup: attacks launched from Kali, detected in real time by a **Splunk SIEM** watching a Debian server.
+
+- 📡 **Ping sweep** detected through `iptables` ICMP logging
+- 🎯 **Nmap port scan** detected from rapid SYN traffic
+- 🔑 **SSH brute force** detected from `auth.log` failed logins
+- 🧯 Fixed a **disk-full outage** from recovery mode (`fdisk`, `growpart`, swap rebuild) with no data loss
+
+`Splunk` `Kali` `Nmap` `iptables` `rsyslog` `Debian`
+
+</td>
+</tr>
+</table>
 
 ---
 
@@ -89,11 +116,11 @@ flowchart TB
 | Area | Tech |
 |---|---|
 | **Access and identity** | WALLIX Bastion · Active Directory · GPO · LDAPS · PKI (AD CS) · MFA |
-| **Network security** | Palo Alto NGFW · pfSense · Barracuda WAF · Forcepoint SWG · FortiNAC |
+| **Network security** | pfSense · iptables · Palo Alto NGFW · Barracuda WAF · Forcepoint SWG · FortiNAC |
 | **Endpoint and data** | Kaspersky EDR · Tripwire (FIM) · PGP encryption |
-| **Monitoring and offense** | Splunk · Kali Linux · Nmap |
+| **Monitoring and offense** | Splunk Enterprise · rsyslog · Kali Linux · Nmap |
 | **Systems** | Windows Server · Debian Linux · Proxmox VE · VMware Workstation |
-| **Networking** | TCP/IP · VLAN · DNS · DHCP · SSH · Cisco |
+| **Networking** | TCP/IP · VLAN · DNS · DHCP · SSH · Cisco (physical VLAN config) |
 
 ---
 
